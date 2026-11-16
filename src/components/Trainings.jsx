@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useSite } from '../context';
 import chair from '../assets/IMG_4374.webp';
+import { sendForm } from '../sendForm';
 
 export default function Trainings() {
   const { t } = useSite();
@@ -8,12 +9,27 @@ export default function Trainings() {
   const [email, setEmail] = useState('');
   const [sent, setSent] = useState(false);
   const [err, setErr] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [sendErr, setSendErr] = useState(false);
 
-  const submit = (e) => {
+  const submit = async (e) => {
     e.preventDefault();
-    // TODO: send the email to a real backend / mailing list service.
-    if (/.+@.+\..+/.test(email)) setSent(true);
-    else setErr(true);
+    if (sending) return;
+    if (e.target.elements._honey?.value) return;
+    if (!/.+@.+\..+/.test(email)) {
+      setErr(true);
+      return;
+    }
+    setSending(true);
+    setSendErr(false);
+    try {
+      await sendForm('Тренінги: нова підписка з сайту', { 'Пошта': email.trim() }, email.trim());
+      setSent(true);
+    } catch {
+      setSendErr(true);
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -28,16 +44,18 @@ export default function Trainings() {
           ) : (
             <>
               <form onSubmit={submit} className="trainings__form">
+                <input type="text" name="_honey" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hp" />
                 <input
                   type="email"
                   value={email}
-                  onChange={(e) => { setEmail(e.target.value); setErr(false); }}
+                  onChange={(e) => { setEmail(e.target.value); setErr(false); setSendErr(false); }}
                   placeholder={tr.ph}
                   aria-label={tr.ph}
                 />
-                <button type="submit" className="btn btn--md">{tr.btn}</button>
+                <button type="submit" className="btn btn--md" disabled={sending}>{tr.btn}</button>
               </form>
               {err && <p className="trainings__err">{tr.err}</p>}
+              {sendErr && <p className="trainings__err">{tr.sendErr}</p>}
             </>
           )}
         </div>

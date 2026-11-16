@@ -6,7 +6,6 @@ import { useViewportWidth, prefersReducedMotion } from './hooks/useViewport';
 import { usePageMotion } from './hooks/usePageMotion';
 
 import Loader from './components/Loader';
-import Cursor from './components/Cursor';
 import Header from './components/Header';
 import MobileMenu from './components/MobileMenu';
 import Hero from './components/Hero';
@@ -72,7 +71,6 @@ export default function App() {
     <SiteContext.Provider value={site}>
       <div ref={rootRef} className="page">
         <Loader />
-        <Cursor />
         <Header dark={hdrDark && !menuOpen} onOpenMenu={() => setMenuOpen(true)} />
         <MobileMenu open={menuOpen} onClose={() => setMenuOpen(false)} />
 

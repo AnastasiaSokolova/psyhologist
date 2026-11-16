@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { useSite } from '../context';
 import photo from '../assets/ya1.webp';
+import { sendForm } from '../sendForm';
 
 const EMPTY = { name: '', msg: '', mail: '', text: '' };
 
@@ -10,6 +11,8 @@ export default function Contacts({ ref }) {
   const [values, setValues] = useState(EMPTY);
   const [err, setErr] = useState(false);
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [sendErr, setSendErr] = useState(false);
   const nameRef = useRef(null);
 
   // Focus the name field whenever someone opens the form (header / hero / sticky "book" buttons).
@@ -24,12 +27,34 @@ export default function Contacts({ ref }) {
     if (key !== 'text') setErr(false);
   };
 
-  const submit = (e) => {
+  const submit = async (e) => {
     e.preventDefault();
-    const ok = values.name.trim() && (/.+@.+\..+/.test(values.mail) || values.msg.trim());
-    // TODO: send `values` to a real backend / form service (e.g. Formspree, Telegram bot).
-    if (ok) setSent(true);
-    else setErr(true);
+    if (sending) return;
+    if (e.target.elements._honey?.value) return; // bot filled the hidden field
+    const mailOk = /.+@.+\..+/.test(values.mail);
+    if (!values.name.trim() || !(mailOk || values.msg.trim())) {
+      setErr(true);
+      return;
+    }
+    setSending(true);
+    setSendErr(false);
+    try {
+      await sendForm(
+        `Новий запис з сайту — ${values.name.trim()}`,
+        {
+          "Ім'я": values.name.trim(),
+          'Месенджер': values.msg.trim() || '—',
+          'Пошта': values.mail.trim() || '—',
+          'Запит': values.text.trim() || '—',
+        },
+        mailOk ? values.mail.trim() : undefined
+      );
+      setSent(true);
+    } catch {
+      setSendErr(true);
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -58,6 +83,7 @@ export default function Contacts({ ref }) {
             </div>
           ) : form.open ? (
             <form onSubmit={submit} noValidate className="book-form">
+              <input type="text" name="_honey" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hp" />
               <label>
                 <span>{c.fName}</span>
                 <input ref={nameRef} type="text" value={values.name} onChange={set('name')} autoComplete="name" />
@@ -76,7 +102,8 @@ export default function Contacts({ ref }) {
               </label>
               <div className="book-form__full book-form__actions">
                 {err && <p className="book-form__err">{c.fErr}</p>}
-                <button type="submit" className="btn-dark">{c.send}</button>
+                {sendErr && <p className="book-form__err">{c.sendErr}</p>}
+                <button type="submit" className="btn-dark" disabled={sending}>{sending ? c.sending : c.send}</button>
               </div>
             </form>
           ) : (

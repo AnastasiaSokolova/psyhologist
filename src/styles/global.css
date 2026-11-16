@@ -41,7 +41,8 @@ body::after {
   opacity: .10;
   background-image: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.12 0 0 0 0 0.11 0 0 0 0 0.1 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
-html[data-cc] * { cursor: none !important; }
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+button:disabled { opacity: .6; pointer-events: none; }
 a { color: inherit; text-decoration: none; }
 a:hover { color: var(--stone); }
 ::selection { background: #E6D9D2; color: var(--ink); }
@@ -160,7 +161,7 @@ img { max-width: 100%; }
 .is-open .plus { transform: rotate(45deg); }
 
 /* ==========================================================================
-   Loader & cursor
+   Loader
    ========================================================================== */
 .loader {
   position: fixed;
@@ -190,22 +191,6 @@ img { max-width: 100%; }
   opacity: 0;
 }
 
-.cursor {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 9px;
-  height: 9px;
-  margin: -4.5px 0 0 -4.5px;
-  border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, .95);
-  background: rgba(255, 255, 255, .6);
-  mix-blend-mode: difference;
-  pointer-events: none;
-  z-index: 9600;
-  opacity: 0;
-  transition: width .6s ease-out, height .6s ease-out, margin .6s ease-out, opacity .6s;
-}
 
 /* ==========================================================================
    Header & mobile menu
@@ -633,7 +618,7 @@ img { max-width: 100%; }
   height: 100%;
   max-width: none;
   object-fit: cover;
-  object-position: 45% 40%;
+  object-position: 50% 32%;
   display: block;
   backface-visibility: hidden;
   filter: sepia(.08) saturate(.92);

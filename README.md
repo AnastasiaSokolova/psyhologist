@@ -33,10 +33,14 @@ The `dist/` folder can also be uploaded as-is to any static host (Netlify, Verce
 | Images | `src/assets/` |
 | Sections | `src/components/*.jsx` (one per section, in page order in `App.jsx`) |
 | Styles | `src/styles/global.css` (mobile overrides at the bottom, breakpoint 820px) |
-| Scroll animations | `src/hooks/usePageMotion.js`, driven by `data-reveal`, `data-mask`, `data-px`, `data-draw`, `data-bg` attributes |
+| Scroll animations | `src/hooks/usePageMotion.js`, driven by `data-reveal`, `data-mask`, `data-px`, `data-bg` attributes |
+
+## Forms
+
+The booking form and the trainings form send emails to yananikolenko18@gmail.com via [FormSubmit](https://formsubmit.co) (`src/sendForm.js`).
+The very first submission triggers an activation email from FormSubmit to that inbox — click **Activate Form** once, otherwise nothing is delivered.
 
 ## Still to fill in
 
 - Placeholder in the texts: `[ПРАВИЛА БУДУТЬ ДОДАНІ]` / `[TERMS TO BE ADDED]`.
-- The booking form (`src/components/Contacts.jsx`) and the trainings email form (`src/components/Trainings.jsx`) only show a thank-you message; neither is connected to an email / Telegram / form service yet.
 - Journal cards link to `#journal`; there are no article pages yet.

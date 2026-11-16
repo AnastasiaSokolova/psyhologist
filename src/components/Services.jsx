@@ -16,7 +16,7 @@ export default function Services() {
 
         <div className="services__list">
           {sv.list.map(([title, price, minutes], i) => (
-            <div key={i} data-reveal="" data-hot="" className="service">
+            <div key={i} data-reveal="" className="service">
               <h3 className="service__title">{title}</h3>
               <div className="service__price">
                 <span className="service__amount">{price}</span>
