@@ -12,16 +12,22 @@ npm run build     # production build → dist/
 npm run preview   # serve dist/ locally
 ```
 
-`vite.config.js` uses `base: './'`, so `dist/` works from any sub-path or static host.
+## Deploy (Cloudflare Pages)
 
-## Deploy
+Connect the GitHub repo in Cloudflare Pages with these settings:
 
-Every push to `main` builds the site and publishes it to GitHub Pages (`.github/workflows/deploy.yml`):
-https://anastasiasokolova.github.io/psyhologist/
+| Setting | Value |
+| --- | --- |
+| Framework preset | Vite (or None) |
+| Build command | `npm run build` |
+| Build output directory | `dist` |
+| Root directory | `/` |
+| Node version | from `.nvmrc` (22) |
+| Environment variables | none required |
 
-One-time setup: repo **Settings → Pages → Source: GitHub Actions**.
-
-The `dist/` folder can also be uploaded as-is to any static host (Netlify, Vercel, Cloudflare Pages).
+- `vite.config.js` uses `base: '/'` — the site is served from the domain root.
+- Article pages use hash URLs (`#/blog/<slug>`), so no `_redirects` file is needed; with no `404.html`, Cloudflare serves `index.html` for unknown paths.
+- Optional overrides: `VITE_SANITY_PROJECT_ID`, `VITE_SANITY_DATASET` (set for Production and Preview; read at build time). Never put a Sanity token in a `VITE_` variable — it would be public.
 
 ## Where things live
 
@@ -35,6 +41,25 @@ The `dist/` folder can also be uploaded as-is to any static host (Netlify, Verce
 | Styles | `src/styles/global.css` (mobile overrides at the bottom, breakpoint 820px) |
 | Scroll animations | `src/hooks/usePageMotion.js`, driven by `data-reveal`, `data-mask`, `data-px`, `data-bg` attributes |
 
+## Blog (Sanity CMS)
+
+Articles are edited in Sanity Studio (`../studio`, run `npm run dev` there → http://localhost:3333), project `sm1kudal`, dataset `production`.
+
+- The site reads **published** articles directly from the Sanity CDN (`src/blog/sanity.js`), filtered by language (`uk` / `en`) and sorted newest first.
+- Article pages open at `#/blog/<slug>` (`src/components/ArticlePage.jsx`); the text is rendered from Portable Text (`src/components/ArticleBody.jsx`).
+- Until a language has at least one published article in Sanity, the blog shows the built-in articles from `src/i18n.js` (`jr.posts`) — or if Sanity can't be reached.
+- Categories in Sanity must match the filter chips: Стосунки, Сексуальність, Я та ідентичність, Психотерапія.
+- Sanity only answers browsers from allowed origins. `http://localhost:5173` and `http://localhost:4173` are allowed; before going live add the Cloudflare addresses (otherwise the blog silently shows the built-in articles):
+
+  ```bash
+  cd ../studio
+  npx sanity cors add https://PROJECT.pages.dev --no-credentials
+  npx sanity cors add "https://*.PROJECT.pages.dev" --no-credentials   # preview deploys
+  npx sanity cors add https://YOUR-DOMAIN.com --no-credentials           # custom domain, if any
+  ```
+
+- New articles appear on the site without a rebuild (the CDN can take up to a minute).
+
 ## Forms
 
 The booking form and the trainings form send emails to yananikolenko18@gmail.com via [FormSubmit](https://formsubmit.co) (`src/sendForm.js`).
@@ -43,4 +68,3 @@ The very first submission triggers an activation email from FormSubmit to that i
 ## Still to fill in
 
 - Placeholder in the texts: `[ПРАВИЛА БУДУТЬ ДОДАНІ]` / `[TERMS TO BE ADDED]`.
-- Journal cards link to `#journal`; there are no article pages yet.

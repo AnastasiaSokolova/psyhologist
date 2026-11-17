@@ -54,7 +54,7 @@ ua: {
     ['Чи можна звернутися із сексологічним запитом?','Так. Можна прийти самостійно або в парі. Ми говоритимемо делікатно, без оцінок і в темпі, який буде для вас безпечним.'],
     ['Як працює конфіденційність?','Усе, що звучить на сесії, залишається між нами. Винятки можливі лише тоді, коли йдеться про пряму загрозу життю, — і про них ми домовляємося заздалегідь.'],
     ['Як скасувати або перенести зустріч?','Напишіть мені якомога раніше, і ми знайдемо інший час. Точні умови перенесення описані в правилах роботи, які ви отримаєте після запису.'] ] },
-  jr: { eyebrow: '07 — блог', h1: 'Блог', h2: 'тексти про внутрішнє', read: 'Читати', empty: 'Тексти на цю тему скоро з\'являться.', filters: ['Усі','Стосунки','Сексуальність','Я та ідентичність','Психотерапія'], posts: [
+  jr: { eyebrow: '07 — блог', h1: 'Блог', h2: 'тексти про внутрішнє', read: 'Читати', back: 'Усі статті', notFound: 'Статтю не знайдено.', empty: 'Тексти на цю тему скоро з\'являться.', filters: ['Усі','Стосунки','Сексуальність','Я та ідентичність','Психотерапія'], posts: [
     [1,'Чому ми обираємо тих самих людей','Про повторювані сценарії у стосунках і про те, як минуле тихо підказує нам вибір.','12 жовтня 2026'],
     [2,'Бажання не зникає без причини','Що може стояти за зниженим бажанням і чому про це варто говорити без сорому.','28 вересня 2026'],
     [4,'Що відбувається на першій сесії','Чесно про хвилювання, мовчання й перші кроки в терапії.','9 вересня 2026'] ] },
@@ -116,7 +116,7 @@ en: {
     ['Can I come with a sexology request?','Yes. You can come on your own or as a couple. We’ll talk gently, without judgement, at a pace that feels safe for you.'],
     ['How does confidentiality work?','Everything said in a session stays between us. Exceptions are possible only when there is a direct threat to life — and we agree on these in advance.'],
     ['How do I cancel or reschedule?','Message me as early as you can and we’ll find another time. The exact terms are in the terms of work you’ll receive after booking.'] ] },
-  jr: { eyebrow: '07 — blog', h1: 'Blog', h2: 'notes on the inner life', read: 'Read', empty: 'Texts on this topic are coming soon.', filters: ['All','Relationships','Sexuality','Self & identity','Psychotherapy'], posts: [
+  jr: { eyebrow: '07 — blog', h1: 'Blog', h2: 'notes on the inner life', read: 'Read', back: 'All articles', notFound: 'Article not found.', empty: 'Texts on this topic are coming soon.', filters: ['All','Relationships','Sexuality','Self & identity','Psychotherapy'], posts: [
     [1,'Why we choose the same people','On repeating patterns in relationships and how the past quietly guides our choices.','12 October 2026'],
     [2,'Desire doesn’t fade without a reason','What may lie behind low desire, and why it’s worth talking about without shame.','28 September 2026'],
     [4,'What happens in a first session','Honestly about nerves, silence and the first steps in therapy.','9 September 2026'] ] },

@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useRef, useState } from 'react';
+import { Suspense, lazy, useCallback, useMemo, useRef, useState } from 'react';
 import { T } from './i18n';
 import { MOBILE_MAX, NAV_IDS, pad } from './data';
 import { SiteContext } from './context';
@@ -22,12 +22,17 @@ import Trainings from './components/Trainings';
 import Contacts from './components/Contacts';
 import Footer from './components/Footer';
 import StickyCta from './components/StickyCta';
+import { useArticleSlug } from './blog/route';
+
+// Article pages (and the rich-text renderer) load only when someone opens an article.
+const ArticlePage = lazy(() => import('./components/ArticlePage'));
 
 export default function App() {
   const [lang, setLangState] = useState('ua');
   const [menuOpen, setMenuOpen] = useState(false);
   // Booking form in the contacts section: `focusTick` bumps each time something asks to open it.
   const [form, setForm] = useState({ open: false, focusTick: 0, focusDelay: 0 });
+  const articleSlug = useArticleSlug();
   const width = useViewportWidth();
   const mobile = width < MOBILE_MAX;
 
@@ -91,6 +96,11 @@ export default function App() {
 
         <Footer />
         {mobile && <StickyCta visible={sticky} />}
+        {articleSlug && (
+          <Suspense fallback={null}>
+            <ArticlePage slug={articleSlug} />
+          </Suspense>
+        )}
       </div>
     </SiteContext.Provider>
   );
