@@ -714,7 +714,7 @@ img { max-width: 100%; }
 .services {
   position: relative;
   background: #FAF6F0;
-  padding: clamp(20px, 3vw, 40px) var(--gutter) clamp(90px, 10vw, 150px);
+  padding: clamp(20px, 3vw, 40px) var(--gutter) clamp(40px, 4.5vw, 72px);
 }
 .services__list {
   margin: clamp(36px, 5vw, 64px) 0 0;
@@ -784,7 +784,7 @@ img { max-width: 100%; }
 .steps {
   position: relative;
   background: #FAF6F0;
-  padding: clamp(72px, 9vw, 140px) var(--gutter) clamp(80px, 9vw, 140px);
+  padding: clamp(28px, 3.5vw, 56px) var(--gutter) clamp(40px, 4.5vw, 72px);
 }
 
 /* Wide (>= 1100px): photo in the middle, labels left/right, curved lines to points on the tree. */
@@ -888,7 +888,7 @@ img { max-width: 100%; }
 /* ==========================================================================
    FAQ
    ========================================================================== */
-.faq { position: relative; padding: clamp(70px, 9vw, 150px) var(--gutter); }
+.faq { position: relative; padding: clamp(28px, 3.5vw, 56px) var(--gutter) clamp(40px, 4.5vw, 72px); }
 .faq__inner { display: flex; flex-direction: column; gap: clamp(36px, 4vw, 56px); }
 .faq__list { width: 100%; border-top: 1px solid rgba(30, 28, 25, .18); }
 .faq__item { border-bottom: 1px solid rgba(30, 28, 25, .18); }
@@ -911,7 +911,7 @@ img { max-width: 100%; }
 /* ==========================================================================
    Journal
    ========================================================================== */
-.journal { position: relative; padding: clamp(60px, 8vw, 130px) var(--gutter); }
+.journal { position: relative; padding: clamp(28px, 3.5vw, 56px) var(--gutter) clamp(60px, 8vw, 130px); }
 .journal__filters { margin-top: 32px; display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; }
 .chip {
   flex: 0 0 auto;
