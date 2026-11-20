@@ -332,7 +332,7 @@ img { max-width: 100%; }
   position: relative;
   min-height: 100svh;
   overflow: hidden;
-  background: linear-gradient(90deg, #E7D7CA 0%, #E7D7CA 40%, #ECDFD0 70%, #F0E5D6 100%);
+  background: #FAF6F0;
   color: var(--ink);
 }
 .hero__portrait {
@@ -1232,7 +1232,7 @@ img { max-width: 100%; }
    Mobile (< 820px)
    ========================================================================== */
 @media (max-width: 819px) {
-  .hero { background: linear-gradient(180deg, #F0E5D6 0%, #E7D7CA 50%, #E7D7CA 100%); }
+  .hero { background: #FAF6F0; }
   .hero__portrait {
     height: 62%;
     --ph-mask: linear-gradient(to bottom, #000 0%, rgba(0,0,0,1) 58.0%, rgba(0,0,0,0.984) 63.2%, rgba(0,0,0,0.896) 68.5%, rgba(0,0,0,0.725) 73.8%, rgba(0,0,0,0.5) 79.0%, rgba(0,0,0,0.275) 84.2%, rgba(0,0,0,0.104) 89.5%, rgba(0,0,0,0.016) 94.8%, rgba(0,0,0,0) 100.0%), linear-gradient(to right, #000, #000);
