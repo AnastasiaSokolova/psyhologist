@@ -3,7 +3,7 @@ export const T = {
 ua: {
   book: 'Записатися', close: 'Закрити',
   nav: ['Про мене','З чим працюю','Підхід','Вартість','Як розпочати','Запитання','Блог','Контакти'],
-  hero: { name: 'Яна Ніколенко', tag: 'простір, де можна почути себе', roles: 'Психолог · психотерапевт в процесі акредитації · сексолог', sub: 'Допомагаю почути себе, віднайти внутрішню опору та будувати щирі стосунки із собою й іншими.', cta1: 'Записатися на консультацію', cta2: 'Дізнатися більше', meta: 'онлайн · українською та англійською' },
+  hero: { name: 'Яна Ніколенко', tag: 'Простір, де можна почути себе', roles: 'Психолог · психотерапевт · сексолог', sub: 'Допомагаю почути себе, віднайти внутрішню опору та будувати щирі стосунки із собою й іншими.', cta1: 'Записатися на консультацію', cta2: 'Дізнатися більше', meta: 'онлайн · українською та англійською' },
   recog: { eyebrow: 'чи впізнаєте ви себе?', h1: 'Терапія може бути', h2: 'вам потрібна, якщо:', items: [
     ['Ви відчуваєте ','постійну тривогу',', навіть коли «все добре».'],
     ['','Стосунки складаються за одним болісним сценарієм',', і ви не розумієте чому.'],
@@ -14,12 +14,12 @@ ua: {
     ['Ви ','вигоріли',' й не можете відпочивати без почуття провини.'],
     ['Ви ','загубили себе',' після кризи чи переїзду й не розумієте, чого хочете.'] ] },
   about: { eyebrow: 'про мене', n1: 'Яна', n2: 'Ніколенко', roles: 'Психолог, психотерапевтка, сексолог', edu: 'Освіта', eduL: 'Освіта та кваліфікація', eduT1: 'Освіта', eduT2: 'та кваліфікація', eduRange: '2015 — сьогодні', quote: 'Для мене терапія — це передусім стосунки: чесні, безпечні й без оцінок.', p: [
-    'Я веду власну практику з 2022 року. Для мене терапія — це передусім стосунки: чесні, безпечні й без оцінок.',
-    'Я працюю під регулярною супервізією й сама проходжу особисту терапію, бо вірю, що супроводжувати іншого вглиб можна лише тоді, коли знаєш цей шлях на собі.',
-    'Мені важливо, щоб на сесії можна було бути будь-якою: розгубленою, злою, сумною, мовчазною. Саме з цього й починаються зміни.' ],
+    'Я веду власну практику з 2022 року.',
+    'Я працюю під регулярною супервізією й сама проходжу особисту терапію. Власний терапевтичний досвід допомагає мені краще розуміти себе та інших.',
+    'Мені важливо створити простір, де можна бути собою: відчувати розгубленість, злість, сум, мовчати й не боятися осуду. Саме з цього й починаються зміни.' ],
     eduList: [
-    ['2024–2025','Магістр психології','ПНПУ ім. К. Д. Ушинського'],
     ['2024–2026','Сексологія','Український інститут психотерапії узалежнень'],
+    ['2024–2025','Магістр психології','ПНПУ ім. К. Д. Ушинського'],
     ['2021–2025','Груповий психоаналіз','Буковинський проєкт групової терапії'],
     ['2021–2023','Пропедевтика психіатрії','Український психотерапевтичний університет'],
     ['2020 — дотепер','Психоаналіз','Український психотерапевтичний університет'],
@@ -31,13 +31,13 @@ ua: {
     ['Сексуальність та бажання','знижене бажання; труднощі зі збудженням та оргазмом; сексуальний сором і внутрішні заборони; тривога під час сексу; проблеми з близькістю в парі'],
     ['Вигорання та виснаження','емоційне та професійне вигорання; хронічний стрес; втрата мотивації; неможливість відпочивати без провини; надмірна вимогливість до себе'],
     ['Ідентичність та пошук себе','втрата контакту з власними бажаннями; кризи та зміни; пошук свого шляху; адаптація після переїзду; внутрішні конфлікти'] ] },
-  quote: { h1: 'Кожне слово', h2: 'має значення', s: 'Терапія — це не про те, щоб себе виправити. Це про те, щоб себе почути.' },
+  quote: { h1: 'Кожне слово', h2: 'має значення', s: 'Психотерапія — це не місце, де ми виправляємо себе. Це місце, де ми починаємо чути себе.' },
   ap: { eyebrow: '03 — мій підхід', h1: 'Мій', h2: 'підхід', foot: 'Незалежно від запиту — неосудливе ставлення та повна конфіденційність.', tabs: [
     ['Психоаналітична терапія','жива розмова','Тут немає вправ і домашніх завдань. Наша робота — це жива розмова, де можна говорити все, що спадає на думку: думки, емоції, сумніви, роздратування. У цьому вільному плині асоціацій поступово проявляється те, що було приховане, і з\'являється глибше розуміння себе.'],
     ['Сексологічні запити','психоаналіз + системно-сімейний підхід','Тут я поєдную психоаналіз із системно-сімейним підходом. Формат більш структурований: можуть бути конкретні завдання, які допомагають рухатися до результату з урахуванням ваших стосунків і контексту життя.'] ] },
   sv: { eyebrow: 'послуги та вартість', h1: 'Послуги', h2: 'та вартість', cur: 'грн', btn: 'Записатися', durL: 'Тривалість', fmtL: 'Формат', freqL: 'Частота', min: 'хв', fmt: 'онлайн', freq: 'раз на тиждень', note: 'Перша консультація платна: це знайомство й формулювання запиту.', rulesT: 'Правила роботи', rules: '[ПРАВИЛА БУДУТЬ ДОДАНІ]', list: [
     ['Індивідуальна психотерапія','1500','50'], ['Сексологічне консультування','1500','60'], ['Парне консультування','2000','120'] ] },
-  st: { eyebrow: '05 — як розпочати', h1: 'Як', h2: 'розпочати', lead: 'Дерево — символ того, як поступово, від коріння до крони, формується внутрішня опора.', tz: 'Працюю за часом [ЧАСОВИЙ ПОЯС], підлаштуємо зустріч під вашу локацію.', list: [
+  st: { eyebrow: '05 — як розпочати', h1: 'Як', h2: 'розпочати', lead: 'Мушля — символ того, як поступово, виток за витком, формується внутрішня опора.', tz: 'Працюю за часом [ЧАСОВИЙ ПОЯС], підлаштуємо зустріч під вашу локацію.', list: [
     ['Запис','Залиште свої контактні дані, щоб я могла з вами зв\'язатися.'],
     ['Підтвердження','Я зв\'яжуся з вами, ми узгодимо зручний час зустрічі, після чого ви отримаєте реквізити для передоплати.'],
     ['Перша зустріч','Знайомимося, говоримо про те, що вас турбує, та разом формуємо запит для подальшої роботи.'],
@@ -54,7 +54,7 @@ ua: {
     ['Чи можна звернутися із сексологічним запитом?','Так. Можна прийти самостійно або в парі. Ми говоритимемо делікатно, без оцінок і в темпі, який буде для вас безпечним.'],
     ['Як працює конфіденційність?','Усе, що звучить на сесії, залишається між нами. Винятки можливі лише тоді, коли йдеться про пряму загрозу життю, — і про них ми домовляємося заздалегідь.'],
     ['Як скасувати або перенести зустріч?','Напишіть мені якомога раніше, і ми знайдемо інший час. Точні умови перенесення описані в правилах роботи, які ви отримаєте після запису.'] ] },
-  jr: { eyebrow: '07 — блог', h1: 'Блог', h2: 'тексти про внутрішнє', read: 'Читати', back: 'Усі статті', notFound: 'Статтю не знайдено.', empty: 'Тексти на цю тему скоро з\'являться.', filters: ['Усі','Стосунки','Сексуальність','Я та ідентичність','Психотерапія'], posts: [
+  jr: { eyebrow: '07 — блог', h1: 'Тексти', h2: 'про внутрішнє', read: 'Читати', back: 'Усі статті', notFound: 'Статтю не знайдено.', empty: 'Тексти на цю тему скоро з\'являться.', filters: ['Усі','Стосунки','Сексуальність','Я та ідентичність','Психотерапія'], posts: [
     [1,'Чому ми обираємо тих самих людей','Про повторювані сценарії у стосунках і про те, як минуле тихо підказує нам вибір.','12 жовтня 2026'],
     [2,'Бажання не зникає без причини','Що може стояти за зниженим бажанням і чому про це варто говорити без сорому.','28 вересня 2026'],
     [4,'Що відбувається на першій сесії','Чесно про хвилювання, мовчання й перші кроки в терапії.','9 вересня 2026'] ] },
@@ -65,7 +65,7 @@ ua: {
 en: {
   book: 'Book', close: 'Close',
   nav: ['About','How I help','Approach','Fees','Getting started','FAQ','Blog','Contact'],
-  hero: { name: 'Yana Nikolenko', tag: 'a space to hear yourself', roles: 'Psychologist · psychotherapist in accreditation · sexologist', sub: 'I help you hear yourself, find inner support and build sincere relationships with yourself and others.', cta1: 'Book a consultation', cta2: 'Learn more', meta: 'online · in Ukrainian and English' },
+  hero: { name: 'Yana Nikolenko', tag: 'A space to hear yourself', roles: 'Psychologist · psychotherapist · sexologist', sub: 'I help you hear yourself, find inner support and build sincere relationships with yourself and others.', cta1: 'Book a consultation', cta2: 'Learn more', meta: 'online · in Ukrainian and English' },
   recog: { eyebrow: 'do you recognise yourself?', h1: 'Therapy may be', h2: 'right for you if:', items: [
     ['You feel ','constant anxiety',', even when “everything is fine”.'],
     ['','Your relationships follow the same painful script',', and you don’t know why.'],
@@ -76,12 +76,12 @@ en: {
     ['You are ','burnt out',' and can’t rest without feeling guilty.'],
     ['You have ','lost yourself',' after a crisis or a move and don’t know what you want.'] ] },
   about: { eyebrow: 'about me', n1: 'Yana', n2: 'Nikolenko', roles: 'Psychologist, psychotherapist, sexologist', edu: 'Education', eduL: 'Education & qualifications', eduT1: 'Education', eduT2: '& qualifications', eduRange: '2015 — present', quote: 'To me, therapy is first of all a relationship: honest, safe and free of judgement.', p: [
-    'I have had my own practice since 2022. To me, therapy is first of all a relationship: honest, safe and free of judgement.',
-    'I work under regular supervision and am in personal therapy myself, because I believe you can only accompany someone into depth once you have walked that path yourself.',
-    'It matters to me that in a session you can be any way you are: lost, angry, sad, silent. That is exactly where change begins.' ],
+    'I have had my own practice since 2022.',
+    'I work under regular supervision and am in personal therapy myself. My own experience of therapy helps me better understand myself and others.',
+    'It matters to me to create a space where you can be yourself: feel lost, angry or sad, stay silent — and not be afraid of judgement. That is exactly where change begins.' ],
     eduList: [
-    ['2024–2025','MSc in Psychology','K. D. Ushynsky South Ukrainian National Pedagogical University'],
     ['2024–2026','Sexology','Ukrainian Institute of Addiction Psychotherapy'],
+    ['2024–2025','MSc in Psychology','K. D. Ushynsky South Ukrainian National Pedagogical University'],
     ['2021–2025','Group psychoanalysis','Bukovina Group Therapy Project'],
     ['2021–2023','Propaedeutics of psychiatry','Ukrainian Psychotherapeutic University'],
     ['2020 — present','Psychoanalysis','Ukrainian Psychotherapeutic University'],
@@ -93,13 +93,13 @@ en: {
     ['Sexuality & desire','low desire; difficulties with arousal and orgasm; sexual shame and inner prohibitions; anxiety during sex; intimacy issues in a couple'],
     ['Burnout & exhaustion','emotional and professional burnout; chronic stress; loss of motivation; inability to rest without guilt; excessive demands on yourself'],
     ['Identity & finding yourself','losing touch with your own desires; crises and change; searching for your path; adapting after relocation; inner conflicts'] ] },
-  quote: { h1: 'Every word', h2: 'matters', s: 'Therapy is not about fixing yourself. It is about hearing yourself.' },
+  quote: { h1: 'Every word', h2: 'matters', s: 'Psychotherapy is not a place where we fix ourselves. It is a place where we begin to hear ourselves.' },
   ap: { eyebrow: '03 — my approach', h1: 'My', h2: 'approach', foot: 'Whatever brings you here — a non-judgemental stance and full confidentiality.', tabs: [
     ['Psychoanalytic therapy','a living conversation','There are no exercises or homework here. Our work is a living conversation where you can say whatever comes to mind: thoughts, emotions, doubts, irritation. In this free flow of associations, what was hidden gradually surfaces, and a deeper understanding of yourself appears.'],
     ['Sexology requests','psychoanalysis + systemic family approach','Here I combine psychoanalysis with a systemic family approach. The format is more structured: there may be specific tasks that help you move towards a result, taking into account your relationships and life context.'] ] },
   sv: { eyebrow: 'services & fees', h1: 'Services', h2: '& fees', cur: 'UAH', btn: 'Book', durL: 'Duration', fmtL: 'Format', freqL: 'Frequency', min: 'min', fmt: 'online', freq: 'once a week', note: 'The first consultation is paid: it is a time to get to know each other and shape your request.', rulesT: 'Terms of work', rules: '[TERMS TO BE ADDED]', list: [
     ['Individual psychotherapy','1500','50'], ['Sexology consultation','1500','60'], ['Couples counselling','2000','120'] ] },
-  st: { eyebrow: '05 — getting started', h1: 'How to', h2: 'begin', lead: 'The tree is a symbol of how inner support grows gradually — from the roots to the crown.', tz: 'I work in [TIME ZONE] — we’ll find a time that suits your location.', list: [
+  st: { eyebrow: '05 — getting started', h1: 'How to', h2: 'begin', lead: 'The shell is a symbol of how inner support grows gradually — turn by turn.', tz: 'I work in [TIME ZONE] — we’ll find a time that suits your location.', list: [
     ['Reach out','Message me in whatever way suits you, and we’ll agree on a time.'],
     ['Confirmation','You’ll receive payment details and the terms of work.'],
     ['First meeting','We get to know each other, talk about what troubles you and shape your request.'],
@@ -116,7 +116,7 @@ en: {
     ['Can I come with a sexology request?','Yes. You can come on your own or as a couple. We’ll talk gently, without judgement, at a pace that feels safe for you.'],
     ['How does confidentiality work?','Everything said in a session stays between us. Exceptions are possible only when there is a direct threat to life — and we agree on these in advance.'],
     ['How do I cancel or reschedule?','Message me as early as you can and we’ll find another time. The exact terms are in the terms of work you’ll receive after booking.'] ] },
-  jr: { eyebrow: '07 — blog', h1: 'Blog', h2: 'notes on the inner life', read: 'Read', back: 'All articles', notFound: 'Article not found.', empty: 'Texts on this topic are coming soon.', filters: ['All','Relationships','Sexuality','Self & identity','Psychotherapy'], posts: [
+  jr: { eyebrow: '07 — blog', h1: 'Notes', h2: 'on the inner life', read: 'Read', back: 'All articles', notFound: 'Article not found.', empty: 'Texts on this topic are coming soon.', filters: ['All','Relationships','Sexuality','Self & identity','Psychotherapy'], posts: [
     [1,'Why we choose the same people','On repeating patterns in relationships and how the past quietly guides our choices.','12 October 2026'],
     [2,'Desire doesn’t fade without a reason','What may lie behind low desire, and why it’s worth talking about without shame.','28 September 2026'],
     [4,'What happens in a first session','Honestly about nerves, silence and the first steps in therapy.','9 September 2026'] ] },

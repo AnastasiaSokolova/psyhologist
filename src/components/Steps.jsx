@@ -1,8 +1,8 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useId, useRef, useState } from 'react';
 import { useSite } from '../context';
 import { pad } from '../data';
 import { prefersReducedMotion } from '../hooks/useViewport';
-import banyan from '../assets/banyan.webp';
+import shell from '../assets/shell.webp';
 
 // Wide layout geometry. The stage is 100 x 60 units. The tree photo is a square
 // PHOTO_W units wide, centred horizontally and vertically; labels are LABEL_W wide on each side.
@@ -11,9 +11,10 @@ const PHOTO_W = 48;
 const PHOTO_L = (100 - PHOTO_W) / 2;
 const PHOTO_T = (60 - PHOTO_W) / 2;
 const LABEL_W = 20;
-const TREE_P = [[64, 82], [42, 66], [58, 46], [24, 32], [70, 12]]; // step points on the photo, in %
-const SIDE = ['r', 'l', 'r', 'l', 'r']; // which side the label sits on
-const LY = [47, 36, 24, 13, 2]; // label top, in stage units
+const TREE_P = [[15.6, 26.3], [11.3, 72.7], [74.3, 12.7], [93.7, 50.8], [79, 85.4]]; // step points on the shell spiral, in %
+const SIDE = ['l', 'l', 'r', 'r', 'r']; // which side the label sits on
+const LY = [10, 31, 3, 23, 45]; // label top, in stage units
+const NUM_W = 5.5; // left labels: the line starts just after the number
 
 function treePoints(list) {
   return list.slice(0, 5).map(([title, desc], i) => {
@@ -22,7 +23,7 @@ function treePoints(list) {
     const Y = PHOTO_T + (py * PHOTO_W) / 100;
     const right = SIDE[i] === 'r';
     const ly = LY[i] + 1.6;
-    const lx = right ? 100 - LABEL_W - 1.5 : LABEL_W + 1.5;
+    const lx = right ? 100 - LABEL_W - 1.5 : NUM_W;
     const mid = (lx + X) / 2;
     return {
       n: pad(i + 1),
@@ -44,6 +45,7 @@ export default function Steps() {
   const wide = width >= 1100;
   const points = treePoints(st.list);
 
+  const maskId = `steps-draw-${useId().replace(/:/g, '')}`;
   const ref = useRef(null);
   const [treeIn, setTreeIn] = useState(() => prefersReducedMotion());
   const [hover, setHover] = useState(-1);
@@ -72,22 +74,35 @@ export default function Steps() {
               className="tree__photo"
               style={{ left: `${PHOTO_L}%`, top: `${(PHOTO_T / 60) * 100}%`, width: `${PHOTO_W}%` }}
             >
-              <img src={banyan} alt="Баньян — від коріння до крони" loading="lazy" decoding="async" />
+              <img src={shell} alt="Мушля-амоніт — спіраль терапевтичного шляху" loading="lazy" decoding="async" />
             </div>
             <svg viewBox="0 0 100 60" preserveAspectRatio="none" fill="none" className="tree__lines">
-              {points.map((p) => (
-                <path
-                  key={p.n}
-                  d={p.path}
-                  pathLength="1"
-                  stroke="#5A3D2B"
-                  strokeOpacity=".7"
-                  strokeWidth="1.1"
-                  strokeLinecap="round"
-                  vectorEffect="non-scaling-stroke"
-                  style={{ transitionDelay: `${p.delay}s` }}
-                />
-              ))}
+              {/* Solid strokes in the mask draw in; the visible lines are dashed. */}
+              <mask id={maskId} maskUnits="userSpaceOnUse" x="-5" y="-5" width="110" height="70">
+                {points.map((p) => (
+                  <path
+                    key={p.n}
+                    d={p.path}
+                    pathLength="1"
+                    stroke="#fff"
+                    strokeWidth="1.2"
+                    style={{ transitionDelay: `${p.delay}s` }}
+                  />
+                ))}
+              </mask>
+              <g mask={`url(#${maskId})`}>
+                {points.map((p) => (
+                  <path
+                    key={p.n}
+                    d={p.path}
+                    stroke="#5A3D2B"
+                    strokeOpacity=".75"
+                    strokeWidth="1"
+                    strokeDasharray="5 5"
+                    vectorEffect="non-scaling-stroke"
+                  />
+                ))}
+              </g>
             </svg>
             {points.map((p, i) => (
               <span
@@ -113,7 +128,7 @@ export default function Steps() {
         ) : (
           <div className="tree-m">
             <div data-mask="" className="tree-m__photo">
-              <img src={banyan} alt="Баньян — від коріння до крони" loading="lazy" decoding="async" />
+              <img src={shell} alt="Мушля-амоніт — спіраль терапевтичного шляху" loading="lazy" decoding="async" />
               {points.map((p) => (
                 <span key={p.n} className="tree-m__pin" style={p.photo}>{p.n}</span>
               ))}

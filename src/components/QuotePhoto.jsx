@@ -1,5 +1,5 @@
 import { useSite } from '../context';
-import photo from '../assets/quote.webp';
+import photo from '../assets/quote-rock.webp';
 
 export default function QuotePhoto() {
   const { t } = useSite();
@@ -7,7 +7,7 @@ export default function QuotePhoto() {
 
   return (
     <section data-bg="#FAF6F0" className="quote">
-      <img src={photo} alt="Яна Ніколенко на траві" data-px="0.12" className="quote__img" loading="lazy" decoding="async" />
+      <img src={photo} alt="Яна Ніколенко серед скель" data-px="0.12" className="quote__img" loading="lazy" decoding="async" />
       <div className="quote__shade" />
       <div className="quote__text">
         <h2 data-reveal="">
