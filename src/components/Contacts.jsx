@@ -72,7 +72,6 @@ export default function Contacts({ ref }) {
             <span className="contacts__title-it">{c.h2}</span>
           </h2>
           <div data-reveal="" className="contacts__note">
-            <span className="contacts__rule" />
             <p>{c.note}</p>
           </div>
 
