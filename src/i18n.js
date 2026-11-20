@@ -15,7 +15,7 @@ ua: {
     ['Ви ','загубили себе',' після кризи чи переїзду й не розумієте, чого хочете.'] ] },
   about: { eyebrow: 'про мене', n1: 'Яна', n2: 'Ніколенко', roles: 'Психолог, психотерапевтка, сексолог', edu: 'Освіта', eduL: 'Освіта та кваліфікація', eduT1: 'Освіта', eduT2: 'та кваліфікація', eduRange: '2015 — сьогодні', quote: 'Для мене терапія — це передусім стосунки: чесні, безпечні й без оцінок.', p: [
     'Я веду власну практику з 2022 року.',
-    'Я працюю під регулярною супервізією й сама проходжу особисту терапію. Власний терапевтичний досвід допомагає мені краще розуміти себе та інших.',
+    'Працюю під регулярною супервізією й сама проходжу особисту терапію. Власний терапевтичний досвід допомагає мені краще розуміти себе та інших.',
     'Мені важливо створити простір, де можна бути собою: відчувати розгубленість, злість, сум, мовчати й не боятися осуду. Саме з цього й починаються зміни.' ],
     eduList: [
     ['2024–2026','Сексологія','Український інститут психотерапії узалежнень'],
@@ -36,7 +36,7 @@ ua: {
     ['Психоаналітична терапія','жива розмова','Тут немає вправ і домашніх завдань. Наша робота — це жива розмова, де можна говорити все, що спадає на думку: думки, емоції, сумніви, роздратування. У цьому вільному плині асоціацій поступово проявляється те, що було приховане, і з\'являється глибше розуміння себе.'],
     ['Сексологічні запити','психоаналіз + системно-сімейний підхід','Тут я поєдную психоаналіз із системно-сімейним підходом. Формат більш структурований: можуть бути конкретні завдання, які допомагають рухатися до результату з урахуванням ваших стосунків і контексту життя.'] ] },
   sv: { eyebrow: 'послуги та вартість', h1: 'Послуги', h2: 'та вартість', cur: 'грн', btn: 'Записатися', durL: 'Тривалість', fmtL: 'Формат', freqL: 'Частота', min: 'хв', fmt: 'онлайн', freq: 'раз на тиждень', note: 'Перша консультація платна: це знайомство й формулювання запиту.', rulesT: 'Правила роботи', rules: '[ПРАВИЛА БУДУТЬ ДОДАНІ]', list: [
-    ['Індивідуальна психотерапія','1500','50'], ['Сексологічне консультування','1500','60'], ['Парне консультування','2000','120'] ] },
+    ['Індивідуальна психотерапія','1700','50'], ['Сексологічне консультування','1800','60'], ['Парне консультування','3000','120'] ] },
   st: { eyebrow: '05 — як розпочати', h1: 'Як', h2: 'розпочати', lead: 'Мушля — символ того, як поступово, виток за витком, формується внутрішня опора.', tz: 'Працюю за часом [ЧАСОВИЙ ПОЯС], підлаштуємо зустріч під вашу локацію.', list: [
     ['Запис','Залиште свої контактні дані, щоб я могла з вами зв\'язатися.'],
     ['Підтвердження','Я зв\'яжуся з вами, ми узгодимо зручний час зустрічі, після чого ви отримаєте реквізити для передоплати.'],
@@ -98,7 +98,7 @@ en: {
     ['Psychoanalytic therapy','a living conversation','There are no exercises or homework here. Our work is a living conversation where you can say whatever comes to mind: thoughts, emotions, doubts, irritation. In this free flow of associations, what was hidden gradually surfaces, and a deeper understanding of yourself appears.'],
     ['Sexology requests','psychoanalysis + systemic family approach','Here I combine psychoanalysis with a systemic family approach. The format is more structured: there may be specific tasks that help you move towards a result, taking into account your relationships and life context.'] ] },
   sv: { eyebrow: 'services & fees', h1: 'Services', h2: '& fees', cur: 'UAH', btn: 'Book', durL: 'Duration', fmtL: 'Format', freqL: 'Frequency', min: 'min', fmt: 'online', freq: 'once a week', note: 'The first consultation is paid: it is a time to get to know each other and shape your request.', rulesT: 'Terms of work', rules: '[TERMS TO BE ADDED]', list: [
-    ['Individual psychotherapy','1500','50'], ['Sexology consultation','1500','60'], ['Couples counselling','2000','120'] ] },
+    ['Individual psychotherapy','1700','50'], ['Sexology consultation','1800','60'], ['Couples counselling','3000','120'] ] },
   st: { eyebrow: '05 — getting started', h1: 'How to', h2: 'begin', lead: 'The shell is a symbol of how inner support grows gradually — turn by turn.', tz: 'I work in [TIME ZONE] — we’ll find a time that suits your location.', list: [
     ['Reach out','Message me in whatever way suits you, and we’ll agree on a time.'],
     ['Confirmation','You’ll receive payment details and the terms of work.'],
