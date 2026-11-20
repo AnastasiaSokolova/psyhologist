@@ -1,0 +1,13 @@
+# Netlify serves only the apex domain (yananikolenko.com); the main site runs on
+# Cloudflare Pages at www.yananikolenko.com. Cloudflare Pages ignores this file.
+#
+# Temporary (302) redirect: apex -> www, keeping the path (:splat).
+# Query parameters are passed through automatically.
+# force = true so it applies even when a file exists at the path (e.g. "/" -> index.html).
+# Do NOT add a www -> apex rule: www is not served by Netlify.
+
+[[redirects]]
+  from = "https://yananikolenko.com/*"
+  to = "https://www.yananikolenko.com/:splat"
+  status = 302
+  force = true
