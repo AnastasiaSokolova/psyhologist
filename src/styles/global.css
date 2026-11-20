@@ -343,7 +343,7 @@ img { max-width: 100%; }
   height: 100%;
   overflow: hidden;
   pointer-events: none;
-  --ph-mask: linear-gradient(to right, rgba(0,0,0,.6) 0%, rgba(0,0,0,.85) 20%, #000 40%), linear-gradient(to bottom, #000 0%, rgba(0,0,0,1) 88.0%, rgba(0,0,0,0.984) 89.5%, rgba(0,0,0,0.896) 91.0%, rgba(0,0,0,0.725) 92.5%, rgba(0,0,0,0.5) 94.0%, rgba(0,0,0,0.275) 95.5%, rgba(0,0,0,0.104) 97.0%, rgba(0,0,0,0.016) 98.5%, rgba(0,0,0,0) 100.0%);
+  --ph-mask: linear-gradient(to right, rgba(0,0,0,.6) 0%, rgba(0,0,0,.85) 20%, #000 40%), linear-gradient(#000, #000); /* left fade only, no bottom fade */
   -webkit-mask-image: var(--ph-mask);
   -webkit-mask-composite: source-in;
   mask-image: var(--ph-mask);
@@ -357,15 +357,7 @@ img { max-width: 100%; }
   display: block;
   filter: sepia(.08) saturate(.92) contrast(1.02);
 }
-.hero__fade {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 90px;
-  background: linear-gradient(to bottom, rgba(237,226,214,0) 0%, rgba(237,226,214,.1) 35%, rgba(237,226,214,.35) 60%, rgba(237,226,214,.7) 82%, #EDE2D6 100%);
-  pointer-events: none;
-}
+.hero__fade { display: none; } /* no bottom fade on the hero photo */
 .hero__inner {
   position: relative;
   max-width: 1320px;
@@ -721,7 +713,7 @@ img { max-width: 100%; }
    ========================================================================== */
 .services {
   position: relative;
-  background: linear-gradient(180deg, #FAF6F0 0%, #F0E8DD 38%, #DFD2C1 72%, #CFC0AC 100%);
+  background: #FAF6F0;
   padding: clamp(20px, 3vw, 40px) var(--gutter) clamp(90px, 10vw, 150px);
 }
 .services__list {
@@ -791,7 +783,7 @@ img { max-width: 100%; }
    ========================================================================== */
 .steps {
   position: relative;
-  background: linear-gradient(180deg, #CFC0AC 0%, #E9DFD2 12%, #F5EFE7 28%, #FAF6F0 50%, #FAF6F0 100%);
+  background: #FAF6F0;
   padding: clamp(72px, 9vw, 140px) var(--gutter) clamp(80px, 9vw, 140px);
 }
 
@@ -1057,7 +1049,7 @@ img { max-width: 100%; }
   position: relative;
   overflow: hidden;
   /* matched to the wall colour along the photo's left edge, so text + photo read as one surface */
-  background: linear-gradient(180deg, #F1EDE2 0%, #EFEAE0 35%, #EBE5D9 55%, #E5DFD4 75%, #DED9D0 88%, #DAD5CD 100%);
+  background: linear-gradient(180deg, #F8F3E7 0%, #F5EFE4 40%, #F3EEE2 55%, #EFE9DE 70%, #ECE7DC 85%, #E9E4DA 100%);
   min-height: min(100vh, 900px);
   display: flex;
   flex-direction: column;
@@ -1079,7 +1071,7 @@ img { max-width: 100%; }
   object-fit: cover;
   object-position: 42% 28%;
   display: block;
-  filter: saturate(.82) sepia(.14) contrast(.96);
+  filter: sepia(.2) saturate(.8) brightness(1.02) contrast(.96);
   /* no blend: the section background is matched to the photo instead */
 }
 .contacts__inner { position: relative; width: 100%; }
@@ -1172,30 +1164,35 @@ img { max-width: 100%; }
 /* ==========================================================================
    Footer & sticky CTA
    ========================================================================== */
-.footer { background: #E6DACB; color: var(--ink); padding: 0 var(--gutter) 40px; }
+.footer { background: #E9E4DA; color: var(--ink); padding: 0 var(--gutter) 40px; }
 .footer__inner { padding-top: 40px; border-top: 1px solid rgba(30, 28, 25, .16); }
-.footer__top { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 28px; }
-.footer__logo { font-family: var(--serif); font-weight: 300; font-size: 30px; }
-.footer__nav { display: flex; flex-wrap: wrap; gap: 10px 24px; font-size: 13px; letter-spacing: .04em; }
+.footer__top { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 20px 28px; }
+.footer__logo { font-family: var(--serif); font-weight: 300; font-size: 28px; line-height: 1; }
+.footer__nav { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 24px; font-size: 13px; line-height: 1; letter-spacing: .04em; }
 .footer__nav a { color: var(--ink); }
 .footer__social { display: flex; gap: 10px; }
 .footer__social a {
-  padding: 8px 14px;
+  display: inline-block;
+  padding: 10px 18px;
   border: 1px solid rgba(30, 28, 25, .45);
   border-radius: 999px;
-  font-size: 12px;
-  letter-spacing: .08em;
+  font-size: 13px;
+  line-height: 1;
+  letter-spacing: .04em;
   color: var(--ink);
 }
 .footer__bottom {
-  margin-top: 40px;
+  margin-top: 32px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(30, 28, 25, .1);
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-end;
+  justify-content: flex-start;
   gap: 16px;
-  font-size: 12.5px;
+  font-size: 12px;
   line-height: 1.6;
-  color: var(--ink-2);
+  letter-spacing: .04em;
+  color: var(--muted);
 }
 
 .sticky-cta {
@@ -1274,7 +1271,7 @@ img { max-width: 100%; }
   .trainings__p { white-space: normal; }
   .trainings__img { min-height: 300px; }
 
-  .contacts { min-height: 0; padding: 0 22px 72px; background: linear-gradient(180deg, #FAF6F0 0%, #F3ECE2 55%, #E6DACB 100%); }
+  .contacts { min-height: 0; padding: 0 22px 72px; background: linear-gradient(180deg, #FAF6F0 0%, #F3EEE4 55%, #E9E4DA 100%); }
   .contacts__photo {
     position: relative;
     width: calc(100% + 44px);
