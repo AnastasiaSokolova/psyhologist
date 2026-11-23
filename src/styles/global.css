@@ -1120,8 +1120,10 @@ img { max-width: 100%; }
   border-radius: 24px;
 }
 @media (max-width: 1099px) { .book-form { grid-template-columns: minmax(0, 1fr); } }
-.book-form label { display: flex; flex-direction: column; gap: 6px; }
-.book-form label > span { font-size: 10.5px; letter-spacing: .2em; text-transform: uppercase; font-weight: 500; color: var(--muted); }
+/* Each field spans two parent rows (label / control) via subgrid, so controls in the same
+   row line up even when one label wraps to two lines. */
+.book-form label { display: grid; grid-row: span 2; grid-template-rows: subgrid; row-gap: 6px; }
+.book-form label > span { align-self: end; font-size: 10.5px; letter-spacing: .2em; text-transform: uppercase; font-weight: 500; color: var(--muted); }
 .book-form input, .book-form textarea {
   width: 100%;
   border: 0;
@@ -1145,7 +1147,6 @@ img { max-width: 100%; }
   margin-top: 36px;
   padding: 28px 0;
   border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
 }
 .contacts__done div { font-family: var(--serif); font-style: italic; font-size: 30px; line-height: 1.2; color: var(--brown); }
 .contacts__done p { margin: 10px 0 0; font-size: 15px; line-height: 1.7; color: var(--ink-2); }

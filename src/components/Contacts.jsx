@@ -83,11 +83,11 @@ export default function Contacts({ ref }) {
           ) : form.open ? (
             <form onSubmit={submit} noValidate className="book-form">
               <input type="text" name="_honey" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hp" />
-              <label>
+              <label className="book-form__full">
                 <span>{c.fName}</span>
                 <input ref={nameRef} type="text" value={values.name} onChange={set('name')} autoComplete="name" />
               </label>
-              <label>
+              <label className="book-form__full">
                 <span>{c.fMsg}</span>
                 <input type="text" value={values.msg} onChange={set('msg')} placeholder={c.fMsgPh} />
               </label>
