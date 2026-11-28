@@ -35,7 +35,7 @@ export default function ArticlePage({ slug }) {
 
   useEffect(() => {
     if (article) document.title = `${article.title} — Yana Nikolenko`;
-    return () => { document.title = 'Yana Nikolenko — психолог'; };
+    return () => { document.title = 'Яна Ніколенко — психологиня, психотерапевтка, сексологиня онлайн'; };
   }, [article]);
 
   return (
